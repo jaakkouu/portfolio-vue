@@ -1,18 +1,17 @@
 <template>
   <div class="skills">
-    <SkillDot v-for="skill in this.skills" v-bind:skill="skill" />
+    <Badge v-for="skill in this.skills" v-bind:skill="skill" />
   </div>
 </template>
 
 <script>
-
-import SkillDot from './SkillDot'
+import Badge from './Badge'
 
 export default {
     name: 'SkillList',
     props: ['skills'],
     components: {
-      SkillDot
+      Badge
     }
 }
 </script>

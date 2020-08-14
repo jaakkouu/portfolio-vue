@@ -1,27 +1,27 @@
 <template>
   <div class="reference">
-    <header>
+    <h3>
       <span>{{ this.reference.name }} 
         {{ this.hasAdditionalInfo() 
           ? ' | ' + this.reference.additionalInfo
           : ''
         }}
       </span>
-    </header>
-    <p>{{ this.reference['short-description'] }}</p>
-    <Badges v-bind:badges="this.reference.skills" />
+    </h3>
+    <p v-html="this.reference['short-description']" />
+    <SkillList v-bind:skills="this.reference.skills" />
   </div>
 </template>
 
 <script>
 
-import Badges from './Badges'
+import SkillList from './SkillList'
 
 export default {
     name: 'Reference',
     props: ['reference'],
     components: {
-      Badges
+      SkillList
     },
     methods: {
       hasAdditionalInfo() {
@@ -30,7 +30,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

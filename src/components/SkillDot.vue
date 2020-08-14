@@ -1,10 +1,10 @@
 <template>
-    <span class="badge">{{ this.skill }}</span>
+    <span v-bind:title=this.skill class="skill"></span>
 </template>
 
 <script>
 export default {
-    name: 'SkillBadge',
+    name: 'SkillDot',
     props: ['skill']
 }
 </script>

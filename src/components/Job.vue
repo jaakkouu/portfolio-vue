@@ -1,19 +1,19 @@
 <template>
   <div class="job" v-if="this.hasPhases()">
-    <header>
-      <span>{{ this.job.workPlace }}</span>
-    </header>
-    <PhaseList v-bind:phases="this.job.phases" />
+    <h3>
+      <span>{{ job.workPlace }}</span>
+    </h3>
+    <PhaseList v-bind:phases="job.phases" />
   </div>
   <div class="job" v-else>
-    <header>
-      <span>{{ this.job.title }} || {{ this.job.workPlace }}</span>
-    </header>
+    <h3>
+      <span>{{ job.title }} | {{ job.workPlace }}</span>
+    </h3>
+    <p>{{ job.started }} - {{job.ended}}</p>
   </div>
 </template>
 
 <script>
-
 import PhaseList from './PhaseList'
 
 export default {
@@ -29,7 +29,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

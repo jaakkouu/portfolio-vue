@@ -1,5 +1,5 @@
 <template>
-    <div class="content-right">
+    <div id="content-right">
         <slot></slot>
     </div>
 </template>
@@ -9,7 +9,3 @@ export default {
     name: 'ContentRight'
 }
 </script>
-
-<style>
-
-</style>

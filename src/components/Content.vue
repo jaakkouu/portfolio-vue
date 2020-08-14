@@ -1,11 +1,11 @@
 <template>
-    <div id="content-left">
+    <div id="content">
         <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'ContentLeft'
+    name: 'Content'
 }
 </script>

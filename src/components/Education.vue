@@ -1,9 +1,9 @@
 <template>
   <div class="education">
-    <header>
-      <span>{{this.education.title}} | {{this.education.workPlace}}</span>
-    </header>
-    <p>{{this.education.subject}} | {{this.education.started}} - {{this.education.ended}}</p>
+    <h3>
+      <span>{{education.title}} | {{education.workPlace}}</span>
+    </h3>
+    <p>{{education.subject}} | {{education.started}} - {{education.ended}}</p>
   </div>
 </template>
 
@@ -13,7 +13,3 @@ export default {
     props: ['education']
 }
 </script>
-
-<style>
-
-</style>

@@ -1,6 +1,5 @@
 <template>
   <div class="educations">
-    <h2>Education</h2>
     <Education v-for="education in this.educations" v-bind:education="education" />
   </div>
 </template>
@@ -17,7 +16,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

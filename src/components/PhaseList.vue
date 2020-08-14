@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 import Phase from './Phase'
 
 export default {
@@ -16,7 +15,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

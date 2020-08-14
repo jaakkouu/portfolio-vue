@@ -1,7 +1,7 @@
 <template>
   <div class="phase">
-      <header>{{ this.phase.title }}</header>
-      <p>{{this.phase.started}} - {{this.phase.ended}}</p>
+      <h3>{{ phase.title }}</h3>
+      <p>{{ phase.started }} - {{ phase.ended }}</p>
   </div>
 </template>
 
@@ -11,7 +11,3 @@ export default {
     props: ['phase']
 }
 </script>
-
-<style>
-
-</style>
