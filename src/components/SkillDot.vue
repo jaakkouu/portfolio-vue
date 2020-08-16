@@ -1,10 +1,13 @@
 <template>
-    <span v-bind:title=this.skill class="skill"></span>
+    <span v-bind:style="{backgroundColor: backgroundColor}" v-bind:title=skill class="skill"></span>
 </template>
 
 <script>
 export default {
     name: 'SkillDot',
-    props: ['skill']
+    props: {
+        skill: String,
+        backgroundColor: String
+    }
 }
 </script>

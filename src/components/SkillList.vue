@@ -1,6 +1,6 @@
 <template>
   <div class="skills">
-    <SkillDot v-for="skill in this.skills" v-bind:skill="skill" />
+    <SkillDot v-for="skillItem in this.skills" v-bind:style="{ backgroundColor: skillItem.backgroundColor}" v-bind:skill="skillItem.skill" />
   </div>
 </template>
 

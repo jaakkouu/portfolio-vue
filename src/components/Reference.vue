@@ -1,15 +1,15 @@
 <template>
   <div class="reference">
     <h3>
-      <span>{{ this.reference.name }} 
+      <span>{{ reference.name }} 
         {{ this.hasAdditionalInfo() 
-          ? ' | ' + this.reference.additionalInfo
+          ? ' | ' + reference.additionalInfo
           : ''
         }}
       </span>
     </h3>
-    <p v-html="this.reference['short-description']" />
-    <SkillList v-bind:skills="this.reference.skills" />
+    <p v-html="reference['short-description']" />
+    <SkillList v-bind:skills="reference.skills" />
   </div>
 </template>
 

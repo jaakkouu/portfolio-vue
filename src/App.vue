@@ -1,27 +1,27 @@
 <template>
-	<div id="app" v-if=this.data>
-		<ChangeLanguageButton v-bind:buttonText=this.data[this.language].titles.switchlanguage />
+	<div id="app" v-if=data>
+		<ChangeLanguageButton v-bind:buttonText=data[this.language].titles.switchlanguage />
 		<Main>
-			<Header v-bind:personal=this.data[this.language].personal />
+			<Header v-bind:personal=data[this.language].personal />
 			<Content>
 				<ContentLeft>
-					<Section v-bind:title=this.data[this.language].titles.introduction>
-						<Introduction v-bind:description=this.data[this.language].personal.description />
+					<Section v-bind:title=data[this.language].titles.introduction>
+						<Introduction v-bind:description=data[this.language].personal.description />
 					</Section>
-					<Section v-bind:title=this.data[this.language].titles.experience>
-						<JobList v-bind:jobs=this.data[this.language].jobs />
+					<Section v-bind:title=data[this.language].titles.experience>
+						<JobList v-bind:jobs=data[this.language].jobs />
 					</Section>
-					<Section v-bind:title=this.data[this.language].titles.education>
-						<EducationList v-bind:educations=this.data[this.language].education />
+					<Section v-bind:title=data[this.language].titles.education>
+						<EducationList v-bind:educations=data[this.language].education />
 					</Section>
 				</ContentLeft>
 				<ContentDivider />
 				<ContentRight>
-					<Section v-bind:title=this.data[this.language].titles.knowledge>
-						<BadgeList v-bind:skills=this.data.knowledges />
+					<Section v-bind:title=data[this.language].titles.knowledge>
+						<BadgeList v-bind:skills=computedKnowledges />
 					</Section>
-					<Section v-bind:title=this.data[this.language].titles.references>
-						<ReferenceList v-bind:references=this.data[this.language].references />
+					<Section v-bind:title=data[this.language].titles.references>
+						<ReferenceList v-bind:references=computedReferences />
 					</Section>
 				</ContentRight>
 			</Content>
@@ -47,6 +47,7 @@ import ContentRight from './components/ContentRight'
 import BadgeList from './components/BadgeList'
 import ReferenceList from './components/ReferenceList'
 import Footer from './components/Footer'	
+import RandomColor from '../node_modules/randomcolor/randomColor'
 
 export default {
 	name: 'Portfolio',
@@ -81,6 +82,44 @@ export default {
 			connection.initializeConnection()
 			connection.initializeDatabase()
 			this.data = await connection.getSnapshot()
+		},
+		generateColorsToKnowledges(){
+			let knowledges = this.data.knowledges,
+				colorArray = RandomColor({
+					count: knowledges.length,
+					luminosity: 'light',
+					format: 'rgba',
+					alpha: 1
+				})
+			return knowledges.map((knowledge, i) => {
+				return {
+					knowledge: knowledge,
+					backgroundColor: colorArray[i]
+				}
+			})
+		},
+		addColorToReference(){
+			let references = this.data[this.language].references
+			references.forEach(reference => {	
+				reference.skills = reference.skills.map(skill => {
+					return {
+						skill: skill,
+						backgroundColor: this.getColorFromKnowledgesBySkillName(skill)
+					}
+				})
+			})
+			return references
+		},
+		getColorFromKnowledgesBySkillName(skillName){
+			return this.computedKnowledges.find(obj => obj.knowledge === skillName).backgroundColor
+		}
+	},
+	computed: {
+		computedKnowledges: function() {
+			return this.generateColorsToKnowledges()
+		},
+		computedReferences: function(){
+			return this.addColorToReference()
 		}
 	}
 }

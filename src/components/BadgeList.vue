@@ -1,6 +1,6 @@
 <template>
   <div class="skills">
-    <Badge v-for="skill in this.skills" v-bind:skill="skill" />
+    <Badge v-bind:style="{ backgroundColor: skillItem.backgroundColor}" v-for="skillItem in this.skills" v-bind:skill="skillItem.knowledge" />
   </div>
 </template>
 
@@ -9,7 +9,10 @@ import Badge from './Badge'
 
 export default {
     name: 'SkillList',
-    props: ['skills'],
+    props: {
+      skills: Array,
+      required: true
+    },
     components: {
       Badge
     }

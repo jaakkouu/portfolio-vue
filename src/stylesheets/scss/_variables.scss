@@ -2,7 +2,7 @@
 $font-base-size: 0.875rem;
 $font-badge-size: calculateRem(11px);
 $font-family-heading: "Lato" !default;
-$font-family-body: "Raleway" !default;
+$font-family-body: "Rubik" !default;
 $font-heading-weight: 700 !default;
 $font-body-weight: 300 !default;
 $backgroundColor: #f9f9f9 !default;
@@ -10,5 +10,6 @@ $color: #ba88ce !default;
 $main-width: 960px !default;
 $main-padding: 25px 50px !default;
 $heading-margin-bottom: 16px !default;
+$text-line-height: 18px !default;
 $job-margin-bottom: $heading-margin-bottom !default;
 $job-phase-margin-bottom: $job-margin-bottom !default;
