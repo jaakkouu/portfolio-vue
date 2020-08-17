@@ -2,7 +2,7 @@
 	<div id="app" v-if=data>
 		<ChangeLanguageButton v-bind:buttonText=data[this.language].titles.switchlanguage />
 		<Main>
-			<Header v-bind:personal=data[this.language].personal />
+			<Header v-bind:personal=data[this.language].personal v-bind:personalLinks=links />
 			<Content>
 				<ContentLeft>
 					<Section v-bind:title=data[this.language].titles.introduction>
@@ -54,7 +54,18 @@ export default {
 	data () {
 		return { 
 			data: null,
-			language: 'fi'
+			language: 'fi',
+			links: [{
+				href: "https://github.com/jaakkouu/",
+				iconPrefix: 'fab',
+				icon: "github-square",
+				name: "Github"
+			}, {
+				href: "https://www.linkedin.com/in/jaakko-uusitalo/",
+				iconPrefix: 'fab',
+				icon: "linkedin",
+				name: "LinkedIn"
+			}]
 		}
 	},
 	components: {

@@ -139,6 +139,19 @@ a {
     }
 }
 
+#header {
+    .personalLinks {
+        svg {
+            cursor: pointer;
+            color: #555555;
+            margin: 0 5px;
+            &:hover {
+                color: #9f04d5;
+            }
+        }
+    }
+}
+
 .phase h3:after {
     content: "\2022";
     color: #8400b5;
