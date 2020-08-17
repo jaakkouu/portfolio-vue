@@ -1,6 +1,6 @@
 <template>
     <div class="changeLanguageButton">
-        <span>{{ buttonText }}</span>
+        <span v-on:click="buttonAction">{{ buttonText }}</span>
     </div>
 </template>
 
@@ -8,7 +8,8 @@
 export default {
     name: 'ChangeLanguageButton',
     props: {
-        buttonText: String
+        buttonText: String,
+        buttonAction: Function
     }
 }
 </script>

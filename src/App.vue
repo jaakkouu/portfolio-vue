@@ -1,6 +1,6 @@
 <template>
 	<div id="app" v-if=data>
-		<ChangeLanguageButton v-bind:buttonText=data[this.language].titles.switchlanguage />
+		<ChangeLanguageButton v-bind:buttonAction="changeLanguage" v-bind:buttonText=data[this.language].titles.switchlanguage />
 		<Main>
 			<Header v-bind:personal=data[this.language].personal v-bind:personalLinks=links />
 			<Content>
@@ -123,6 +123,9 @@ export default {
 		},
 		getColorFromKnowledgesBySkillName(skillName){
 			return this.computedKnowledges.find(obj => obj.knowledge === skillName).backgroundColor
+		},
+		changeLanguage(){
+			this.language = this.language === 'fi' ? 'en' : 'fi'
 		}
 	},
 	computed: {
