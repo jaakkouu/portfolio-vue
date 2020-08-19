@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Title v-bind:title=title />
+        <Title v-if=title v-bind:title=title />
         <slot></slot>
     </div>
 </template>

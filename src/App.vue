@@ -20,7 +20,12 @@
 					<Section v-bind:title=data[this.language].titles.knowledge>
 						<BadgeList v-bind:skills=computedKnowledges />
 					</Section>
-					<Section v-bind:title=data[this.language].titles.references>
+					<Section>
+						<ReferenceSectionTitle 
+							v-bind:title=data[this.language].titles.references
+							v-bind:secondTitle=data[this.language].titles.listhere 
+							v-bind:showList=showMore
+						/>
 						<ReferenceList v-bind:references=computedReferences />
 					</Section>
 				</ContentRight>
@@ -35,6 +40,7 @@
 import FirebaseConnection from './FirebaseConnection'
 import ChangeLanguageButton from './components/ChangeLanguageButton'
 import Section from './components/Section'
+import ReferenceSectionTitle from './components/ReferenceSectionTitle'
 import Main from './components/Main'
 import Header from './components/Header'
 import Content from './components/Content'
@@ -73,6 +79,7 @@ export default {
 		Main,
 		Section,
 		Header,
+		ReferenceSectionTitle,
 		Content,
 		ContentLeft,
 		Introduction,
@@ -126,6 +133,9 @@ export default {
 		},
 		changeLanguage(){
 			this.language = this.language === 'fi' ? 'en' : 'fi'
+		},
+		showMore(){
+			console.log('open list view')
 		}
 	},
 	computed: {

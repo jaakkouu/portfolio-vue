@@ -17,7 +17,7 @@ body {
     font-weight: $font-body-weight;
     font-size: $font-base-size;
 }
-p{
+p {
     line-height: $text-line-height;
 }
 h1, h2, h3, h4 {
@@ -32,6 +32,18 @@ h1, h2, h3, h4 {
 a {
     text-decoration: none;
     color: #9f04d5;
+}
+.btn {
+    color: #9f04d5;
+    cursor: pointer;
+    display: inline-block;
+    &.btn-outline {
+        vertical-align: middle;
+        border: 1px solid #9f04d5;
+        border-radius: 15px;
+        padding: 7px 10px;
+        font-weight: 500;
+    }
 }
 #app {
     max-width: $main-width;
