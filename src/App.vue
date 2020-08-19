@@ -33,6 +33,7 @@
 			<Footer />
 		</Main>
 	</div>
+	<Loader v-else />
 </template>
 
 <script>
@@ -42,6 +43,7 @@ import ChangeLanguageButton from './components/ChangeLanguageButton'
 import Section from './components/Section'
 import ReferenceSectionTitle from './components/ReferenceSectionTitle'
 import Main from './components/Main'
+import Loader from './components/Loader'
 import Header from './components/Header'
 import Content from './components/Content'
 import ContentLeft from './components/ContentLeft'
@@ -89,7 +91,8 @@ export default {
 		ContentRight,
 		BadgeList,
 		ReferenceList,
-		Footer
+		Footer,
+		Loader
 	},
 	created() {
 		this.getData()
