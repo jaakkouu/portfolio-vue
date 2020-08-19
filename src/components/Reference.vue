@@ -1,6 +1,7 @@
 <template>
   <div class="reference">
-    <h3>
+    <h3 style="position:relative">
+      <EyeButton v-if="hasImages()" />
       <span>{{ reference.name }} 
         {{ this.hasAdditionalInfo() 
           ? ' | ' + reference.additionalInfo
@@ -16,14 +17,21 @@
 <script>
 
 import SkillList from './SkillList'
+import EyeButton from './EyeButton'
 
 export default {
     name: 'Reference',
-    props: ['reference'],
+    props: {
+      reference: Object
+    },
     components: {
-      SkillList
+      SkillList,
+      EyeButton
     },
     methods: {
+      hasImages(){
+        return this.reference.hasOwnProperty('images') && this.reference.images.length
+      },
       hasAdditionalInfo() {
         return this.reference.hasOwnProperty('additionalInfo') && this.reference.additionalInfo.length
       }

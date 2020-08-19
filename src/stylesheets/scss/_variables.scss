@@ -9,9 +9,9 @@ $backgroundColor: #f9f9f9 !default;
 $color: #ba88ce !default;
 $main-width: 960px !default;
 $main-padding: 25px 50px !default;
-$heading-margin-bottom: 16px !default;
+$heading-margin-bottom: 24px !default;
 $text-line-height: 18px !default;
-$section-item-margin-bottom: $heading-margin-bottom !default;
+$section-item-margin-bottom: $heading-margin-bottom * 1.1 !default;
 
 $breakpoint-tablet: 768px;
 $breakpoint-phone: 411px;

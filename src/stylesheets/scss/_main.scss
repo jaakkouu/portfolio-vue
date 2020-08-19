@@ -47,7 +47,7 @@ a {
     main {
         display: grid;
         grid-template-areas: "header" "content" "footer";
-        grid-row-gap: 30px;
+        row-gap: 30px;
         border: 15px solid transparent;
         border-image: url('../assets/border.png') 15 repeat;
         width: inherit; 
@@ -173,4 +173,20 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.reference {
+    position: relative;
+    .eyeButton {
+        cursor: pointer;
+        position: absolute;
+        left: -40px;
+        top: -1px;
+        font-size: 9px;
+        padding: 4px 11px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top: 1px solid purple;
+        border-right: 1px solid purple;
+        border-bottom: 1px solid purple;
+    }
 }

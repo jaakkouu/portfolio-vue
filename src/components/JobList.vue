@@ -9,7 +9,9 @@ import Job from './Job'
 
 export default {
   name: 'JobList',
-  props: ['jobs'],
+  props: {
+    jobs: Array
+  },
   components: {
     Job
   }

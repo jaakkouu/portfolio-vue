@@ -1,13 +1,13 @@
 <template>
   <div class="job" v-if="this.hasPhases()">
     <h3>
-      <a href="{job.workPlaceLink}">{{ job.workPlace }}</a>
+      <a :href="job.workPlaceLink">{{ job.workPlace }}</a>
     </h3>
     <PhaseList v-bind:phases="job.phases" />
   </div>
   <div class="job" v-else>
     <h3>
-      <span>{{ job.title }} | <a href="{job.workPlaceLink}">{{ job.workPlace }}</a></span>
+      <span>{{ job.title }} | <a :href="job.workPlaceLink">{{ job.workPlace }}</a></span>
     </h3>
     <p>{{ job.started }} - {{job.ended}}</p>
   </div>
