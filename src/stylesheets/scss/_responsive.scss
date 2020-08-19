@@ -1,0 +1,21 @@
+@media (max-width: $breakpoint-tablet){
+    #content {
+        column-gap: 20px;
+    }
+}
+@media (max-width: $breakpoint-phone){
+    #content {
+        column-gap: 0;
+        grid-template-areas: "content-left" "content-right";
+        grid-template-columns: 1fr;
+        #content-left, #content-right {
+            text-align: center;
+        }
+        #content-divider {
+            display: none;
+        }
+    }
+    .phase h3:after {
+        display: none
+    }
+}
