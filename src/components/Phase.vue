@@ -1,13 +1,19 @@
 <template>
   <div class="phase">
       <h3>{{ phase.title }}</h3>
-      <p>{{ phase.started }} - {{ phase.ended }}</p>
+      <Timeline :started="phase.started" :ended="phase.ended" />
   </div>
 </template>
 
 <script>
+import Timeline from './Timeline'
 export default {
     name: 'Phase',
-    props: ['phase']
+    props: {
+      phase: Object
+    },
+    components: {
+      Timeline
+    }
 }
 </script>

@@ -9,18 +9,22 @@
     <h3>
       <span>{{ job.title }} | <a :href="job.workPlaceLink">{{ job.workPlace }}</a></span>
     </h3>
-    <p>{{ job.started }} - {{job.ended}}</p>
+    <Timeline :started="job.started" :ended="job.ended" />
   </div>
 </template>
 
 <script>
 import PhaseList from './PhaseList'
+import Timeline from './Timeline'
 
 export default {
     name: 'Job',
-    props: ['job'],
+    props: {
+      job: Object
+    },
     components: {
-      PhaseList
+      PhaseList,
+      Timeline
     },
     methods: {
       hasPhases() {
