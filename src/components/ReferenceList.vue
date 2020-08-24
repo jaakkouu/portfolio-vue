@@ -1,6 +1,6 @@
 <template>
   <div class="references">
-    <Reference 
+    <ReferenceListItem 
       v-for="reference in limitReferences(references)" 
       v-bind:reference="reference" 
     />
@@ -12,7 +12,8 @@
 </template>
 
 <script>
-import Reference from './Reference'
+import ReferenceListItem from './ReferenceListItem'
+
 export default {
     name: 'ReferenceList',
     data() {
@@ -37,7 +38,7 @@ export default {
       }
     },
     components: {
-      Reference
+      ReferenceListItem
     }
 }
 </script>

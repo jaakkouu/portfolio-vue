@@ -20,9 +20,12 @@ import SkillList from './SkillList'
 import EyeButton from './EyeButton'
 
 export default {
-    name: 'Reference',
+    name: 'ReferenceListItem',
     props: {
-      reference: Object
+      reference: {
+        type: Object,
+        required: true
+      }
     },
     components: {
       SkillList,

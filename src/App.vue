@@ -1,35 +1,19 @@
 <template>
 	<div id="app" v-if=data>
-		<ChangeLanguageButton v-bind:buttonAction="changeLanguage" v-bind:buttonText=data[this.language].titles.switchlanguage />
+		<ChangeLanguageButton 
+			v-bind:buttonAction="changeLanguage" 
+			v-bind:buttonText=computedData.titles.switchlanguage
+		/>
 		<Main>
-			<Header v-bind:personal=data[this.language].personal v-bind:personalLinks=links />
-			<Content>
-				<ContentLeft>
-					<Section v-bind:title=data[this.language].titles.introduction>
-						<Introduction v-bind:description=data[this.language].personal.description />
-					</Section>
-					<Section v-bind:title=data[this.language].titles.experience>
-						<JobList v-bind:jobs=data[this.language].jobs />
-					</Section>
-					<Section v-bind:title=data[this.language].titles.education>
-						<EducationList v-bind:educations=data[this.language].education />
-					</Section>
-				</ContentLeft>
-				<ContentDivider />
-				<ContentRight>
-					<Section v-bind:title=data[this.language].titles.knowledge>
-						<BadgeList v-bind:skills=computedKnowledges />
-					</Section>
-					<Section>
-						<ReferenceSectionTitle 
-							v-bind:title=data[this.language].titles.references
-							v-bind:secondTitle=data[this.language].titles.listhere 
-							v-bind:showList=showMore
-						/>
-						<ReferenceList v-bind:references=computedReferences />
-					</Section>
-				</ContentRight>
-			</Content>
+			<Header 
+				v-bind:personal=computedData.personal 
+				v-bind:personalLinks=computedData.links
+			/>
+			<ContentView 
+				v-bind:data=computedData 
+				v-bind:view=view
+				v-bind:setView=setView
+			/>
 			<Footer />
 		</Main>
 	</div>
@@ -38,89 +22,63 @@
 
 <script>
 
-import FirebaseConnection from './FirebaseConnection'
-import ChangeLanguageButton from './components/ChangeLanguageButton'
-import Section from './components/Section'
-import ReferenceSectionTitle from './components/ReferenceSectionTitle'
 import Main from './components/Main'
 import Loader from './components/Loader'
 import Header from './components/Header'
-import Content from './components/Content'
-import ContentLeft from './components/ContentLeft'
-import Introduction from './components/Introduction'
-import JobList from './components/JobList'
-import EducationList from './components/EducationList'
-import ContentDivider from './components/ContentDivider'
-import ContentRight from './components/ContentRight'
-import BadgeList from './components/BadgeList'
-import ReferenceList from './components/ReferenceList'
 import Footer from './components/Footer'	
+import ContentView from './components/ContentView'
 import RandomColor from '../node_modules/randomcolor/randomColor'
+import FirebaseConnection from './FirebaseConnection'
+import ChangeLanguageButton from './components/ChangeLanguageButton'
 
 export default {
 	name: 'Portfolio',
 	data () {
 		return { 
-			data: null,
 			language: 'fi',
-			links: [{
-				href: "https://github.com/jaakkouu/",
-				iconPrefix: 'fab',
-				icon: "github-square",
-				name: "Github"
-			}, {
-				href: "https://www.linkedin.com/in/jaakko-uusitalo/",
-				iconPrefix: 'fab',
-				icon: "linkedin",
-				name: "LinkedIn"
-			}]
+			view: 'FrontView',
+			data: null
 		}
 	},
 	components: {
 		ChangeLanguageButton,
 		Main,
-		Section,
 		Header,
-		ReferenceSectionTitle,
-		Content,
-		ContentLeft,
-		Introduction,
-		JobList,
-		EducationList,
-		ContentDivider,
-		ContentRight,
-		BadgeList,
-		ReferenceList,
 		Footer,
-		Loader
+		Loader,
+		ContentView
 	},
 	created() {
-		this.getData()
+		let dataPromise = this.fetchData()
+		this.setData(dataPromise)
 	},
 	methods: {
-		async getData(){
+		async fetchData(){
 			let connection = new FirebaseConnection()
 			connection.initializeConnection()
 			connection.initializeDatabase()
-			this.data = await connection.getSnapshot()
+			return await connection.getSnapshot()
 		},
-		generateColorsToKnowledges(){
-			let knowledges = this.data.knowledges,
-				colorArray = RandomColor({
-					count: knowledges.length,
-					luminosity: 'light',
-					format: 'rgba',
-					alpha: 1
-				})
+		async setData(dataPromise){
+			let data = await dataPromise
+			data.knowledges = this.addColorsToKnowledges(data.knowledges)
+			this.data = data
+		},
+		addColorsToKnowledges(knowledges){
+			let colorArray = RandomColor({
+				count: knowledges.length,
+				luminosity: 'light',
+				format: 'rgba',
+				alpha: 1
+			})
 			return knowledges.map((knowledge, i) => {
 				return {
 					knowledge: knowledge,
 					backgroundColor: colorArray[i]
 				}
 			})
-		},
-		addColorToReference(){
-			let references = this.data[this.language].references
+		},	
+		addColorToReference(references){
 			references.forEach(reference => {	
 				reference.skills = reference.skills.map(skill => {
 					return {
@@ -132,21 +90,24 @@ export default {
 			return references
 		},
 		getColorFromKnowledgesBySkillName(skillName){
-			return this.computedKnowledges.find(obj => obj.knowledge === skillName).backgroundColor
+			return this.data.knowledges.find(obj => obj.knowledge === skillName).backgroundColor
 		},
 		changeLanguage(){
 			this.language = this.language === 'fi' ? 'en' : 'fi'
 		},
-		showMore(){
-			console.log('open list view')
+		setView(view){
+			this.view = view
 		}
 	},
 	computed: {
-		computedKnowledges: function() {
-			return this.generateColorsToKnowledges()
-		},
-		computedReferences: function(){
-			return this.addColorToReference()
+		computedData: function(){
+			let selectedLanguageData = this.data.languages[this.language]
+			selectedLanguageData.references = this.addColorToReference(selectedLanguageData.references)
+			let allowedProperties = {
+				"knowledges": this.data.knowledges,
+				"links": this.data.links
+			}
+			return {...selectedLanguageData, ...allowedProperties}
 		}
 	}
 }
