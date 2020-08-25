@@ -4,15 +4,16 @@
       v-for="reference in limitReferences(references)" 
       v-bind:reference="reference" 
     />
-    <span class="btn btn-outline" v-on:click="toggleLimit">
-      <FontAwesomeIcon size="xs" :icon="['fas', limit ? 'plus' : 'minus']" />
-      {{ limit ? 'Näytä kaikki' : 'Näytä vähemmän' }}
-    </span>
+    <Button v-bind:click="toggleLimit">
+        <FontAwesomeIcon size="xs" :icon="['fas', limit ? 'plus' : 'minus']" />
+        {{ limit ? 'Näytä kaikki' : 'Näytä vähemmän' }}
+    </Button>
   </div>
 </template>
 
 <script>
 import ReferenceListItem from './ReferenceListItem'
+import Button from './Button'
 
 export default {
     name: 'ReferenceList',
@@ -23,7 +24,10 @@ export default {
       }
     },
     props: {
-      references: Array,
+      references: {
+        type: Array,
+        required: true
+      },
     },
     methods: {
       toggleLimit(){
@@ -38,7 +42,8 @@ export default {
       }
     },
     components: {
-      ReferenceListItem
+      ReferenceListItem,
+      Button
     }
 }
 </script>

@@ -13,6 +13,10 @@ export default {
         data: {
             type: Object,
             required: true
+        },
+        setView: {
+            type: Function,
+            required: true
         }
     },
     components: {

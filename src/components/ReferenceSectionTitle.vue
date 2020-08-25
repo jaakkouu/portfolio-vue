@@ -1,14 +1,23 @@
 <template>
-  <h2 class="title">{{ title }} - <span class="btn" v-on:click="showList">{{ secondTitle }}</span></h2>
+  <h2 class="title">{{ title }} - <span class="purple" v-on:click="showList">{{ secondTitle }}</span></h2>
 </template>
 
 <script>
 export default {
-    name: 'Title',
+    name: 'ReferenceSectionTitle',
     props: {
-      title: String,
-      secondTitle: String,
-      showList: Function
+      title: {
+        type: String,
+        required: true
+      },
+      secondTitle: {
+        type: String,
+        required: true
+      },
+      showList: {
+        type: Function,
+        required: true
+      }
     }
 }
 </script>

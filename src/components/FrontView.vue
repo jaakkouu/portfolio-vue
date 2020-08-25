@@ -1,5 +1,5 @@
 <template>
-    <Content>
+    <Content classes="front-view">
         <ContentLeft>
             <Section v-bind:title=data.titles.introduction>
                 <Introduction v-bind:description=data.personal.description />

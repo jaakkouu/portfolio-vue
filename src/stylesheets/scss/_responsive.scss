@@ -4,15 +4,26 @@
     }
 }
 @media (max-width: $breakpoint-phone){
+    #app main {
+        padding: $main-padding-y / 2 $main-padding-x / 2;
+    }
+    .title {
+        text-align: center;
+    }
     #content {
-        column-gap: 0;
-        grid-template-areas: "content-left" "content-right";
-        grid-template-columns: 1fr;
-        #content-left, #content-right {
-            text-align: center;
+        &.front-view {
+            column-gap: 0;
+            grid-template-areas: "content-left" "content-right";
+            grid-template-columns: 1fr;
+            #content-left, #content-right {
+                text-align: center;
+            }
+            #content-divider {
+                display: none;
+            }
         }
-        #content-divider {
-            display: none;
+        #referenceGrid {
+            grid-template-columns: 1fr 1fr;
         }
     }
     .phase h3:after {
