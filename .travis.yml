@@ -1,8 +1,11 @@
 language: node_js
 node_js: 
-  - 9
+  - lts/*
 cache:
   directories:
     - node_modules
   script:
     - npm run jest
+after_success:
+  - npm run build
+  - find . \( -path "./dist/*" -o \) -prune -o -name "*" -print -exec curl --ftp-create-dirs -T {} ftp://jaakkouusitalo.fi/vue/ --user ${SFTP_USER}:${SFTP_PASSWORD} \;
