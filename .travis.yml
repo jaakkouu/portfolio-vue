@@ -8,4 +8,4 @@ cache:
     - npm run jest
 after_success:
   - npm run build
-  - find . \( -path "./dist/*" -o \) -prune -o -name "*" -print -exec curl --ftp-create-dirs -T {} ftp://jaakkouusitalo.fi/vue/ --user ${SFTP_USER}:${SFTP_PASSWORD} \;
+  - find . \( -path "./dist/*" \) -prune -o -name "*" -print -exec curl --ftp-create-dirs -T {} ftp.jaakkouusitalo.fi/vue/ --user ${SFTP_USER}:${SFTP_PASSWORD} \;
