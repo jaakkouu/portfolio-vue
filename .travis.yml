@@ -8,4 +8,4 @@ cache:
     - npm run jest
 after_success:
   - npm run build
-  - find dist -type f -exec curl --user ${SFTP_USER}:${SFTP_PASSWORD} --ftp-create-dirs -T {} ftp://ftp.jaakkouusitalo.fi/vue/{} \;
+  - mv dist vue && find vue -type f -exec curl -u ${SFTP_USER}:${SFTP_PASSWORD} --ftp-create-dirs -T {} ftp://ftp.jaakkouusitalo.fi/{} \;
