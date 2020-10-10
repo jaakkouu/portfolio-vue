@@ -1,6 +1,6 @@
 <template>
   <div class="personalLinks">
-        <PersonalLink v-for="personalLinkItem in this.personalLinks" v-bind:personalLink="personalLinkItem" />
+        <PersonalLink v-for="(personalLinkItem, index) in this.personalLinks" v-bind:key=index v-bind:personalLink="personalLinkItem" />
   </div>
 </template>
 

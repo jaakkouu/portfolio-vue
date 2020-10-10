@@ -1,6 +1,6 @@
 <template>
   <div id="referenceGrid">
-    <ReferenceGridItem v-for="reference in references" v-bind:reference=reference />
+    <ReferenceGridItem v-for="(reference,index) in references" v-bind:key=index v-bind:reference=reference />
   </div>
 </template>
 

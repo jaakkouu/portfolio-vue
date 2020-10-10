@@ -1,7 +1,8 @@
 <template>
   <div class="references">
     <ReferenceListItem 
-      v-for="reference in limitReferences(references)" 
+      v-for="(reference,index) in limitReferences(references)"
+      v-bind:key=index 
       v-bind:reference="reference" 
     />
     <Button v-bind:click="toggleLimit">
