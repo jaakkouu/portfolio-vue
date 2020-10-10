@@ -1,5 +1,5 @@
 <template>
-  <h2 class="title">{{ title }} - <span class="purple" v-on:click="showList">{{ secondTitle }}</span></h2>
+  <h2 class="title">{{ title }} - <span id="openReferences" class="btn purple" v-on:click="showList">{{ secondTitle }}</span></h2>
 </template>
 
 <script>

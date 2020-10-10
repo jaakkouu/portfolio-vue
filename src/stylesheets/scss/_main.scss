@@ -33,6 +33,9 @@ h1, h2, h3, h4 {
 .purple {
     color: #9f04d5;
 }
+span.btn {
+    cursor: pointer;
+}
 a, button {
     text-decoration: none;
     color: #9f04d5;
@@ -52,7 +55,6 @@ a, button {
         }
     }
 }
-
 #app {
     max-width: $main-width;
     width: 100%; 
