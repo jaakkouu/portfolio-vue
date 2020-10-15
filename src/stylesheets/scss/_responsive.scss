@@ -1,6 +1,9 @@
 @media (max-width: $breakpoint-tablet){
     #content {
         column-gap: 20px;
+        #referenceGrid {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 }
 @media (max-width: $breakpoint-phone){
@@ -23,7 +26,7 @@
             }
         }
         #referenceGrid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
         }
     }
     .phase h3:after {

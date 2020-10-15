@@ -19,7 +19,7 @@ context('Front page', () => {
         
         it('when clicked show more, should display all references', () => {
             const referencesList = cy.get('.references')
-            const initialShownReferenceCount = referencesList.get('.reference').length;
+            const initialShownReferenceCount = referencesList.get('.reference').length
             expect(initialShownReferenceCount === 5)
 
             const showMoreButton = referencesList.get('.btn')
@@ -32,6 +32,14 @@ context('Front page', () => {
         it('when clicked open references, should display references grid', () => {
             cy.get('#openReferences').click()
             cy.get('#referenceGrid', { timeout: 1000 }).should('be.visible')
+        })
+
+        it.only("when clicked reference, should display reference", () => {
+            cy.get('#openReferences').click()
+            cy.get('#referenceGrid', { timeout: 1000 }).find('.referenceGridItem').eq(0).click()
+            cy.get('#content h2').should("be.visible")
+            cy.get('#content p').should("be.visible")
+            cy.get('#content .skills').should('be.visible')
         })
 
     })

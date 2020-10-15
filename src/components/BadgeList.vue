@@ -1,6 +1,6 @@
 <template>
   <div class="skills">
-    <Badge v-bind:style="{ backgroundColor: skillItem.backgroundColor}" v-for="(skillItem, index) in this.skills" v-bind:key=index v-bind:skill="skillItem.knowledge" />
+    <Badge v-bind:style="{ backgroundColor: skillItem.backgroundColor}" v-for="(skillItem, index) in this.skills" v-bind:key=index v-bind:skill="skillItem.name" />
   </div>
 </template>
 

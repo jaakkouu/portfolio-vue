@@ -14,17 +14,15 @@ import ContactView from './ContactView'
 
 export default {
     name: 'ContentView',
+    data () {
+        return {
+            view: 'FrontView',
+            data: null,
+        }
+    },
     props: {
-        data: {
+        computedData: {
             type: Object,
-            required: true
-        },
-        view: {
-            type: String,
-            required: true
-        },
-        setView: {
-            type: Function,
             required: true
         }
     },
@@ -33,6 +31,49 @@ export default {
         ReferenceView,
         ReferencesView,
         ContactView
+    },
+    beforeMount: function() {
+        this.data = this.filterDataToView()
+    },
+    methods: {
+		setView(view){
+			this.view = view
+        },
+        setData(data) {
+            this.data = data
+        },
+		setReferenceView(reference){
+            this.setData(reference)
+			this.setView('ReferenceView')
+        },
+        filterDataToView(){
+            switch(this.view) {
+                case 'ReferencesView': return {
+                    titles: this.computedData.titles,
+                    references: this.computedData.references.map(reference => ({
+                        ...reference,
+                        setReferenceView: () => this.setReferenceView(reference)
+                    }))
+                }
+                case 'ReferenceView': return {
+                    reference: this.data,
+                    titles: this.computedData.titles,
+                }
+                default: return {
+                    titles: this.computedData.titles,
+                    personal: this.computedData.personal,
+                    jobs: this.computedData.jobs,
+                    education: this.computedData.education,
+                    knowledges: this.computedData.knowledges,
+                    references: this.computedData.references,
+                }
+            }
+        }
+    },
+    watch: {
+        view: function() {
+            this.data = this.filterDataToView()
+        }
     }
 }
 </script>
