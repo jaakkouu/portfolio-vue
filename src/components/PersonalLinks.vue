@@ -8,12 +8,12 @@
 import PersonalLink from './PersonalLink'
 
 export default {
-    name: 'PersonalLinks',
-    props: {
-        personalLinks: Array
-    },
-    components: {
-        PersonalLink
-    }
+  name: 'PersonalLinks',
+  props: {
+    personalLinks: Array
+  },
+  components: {
+    PersonalLink
+  }
 }
 </script>

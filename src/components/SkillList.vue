@@ -9,10 +9,10 @@
 import SkillDot from './SkillDot'
 
 export default {
-    name: 'SkillList',
-    props: ['skills'],
-    components: {
-      SkillDot
-    }
+  name: 'SkillList',
+  props: ['skills'],
+  components: {
+    SkillDot
+  }
 }
 </script>

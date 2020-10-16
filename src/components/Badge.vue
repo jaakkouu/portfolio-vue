@@ -5,10 +5,10 @@
 <script>
 
 export default {
-    name: 'SkillBadge',
-    props: {
-        skill: String,
-        backgroundColor: String
-    }
+  name: 'SkillBadge',
+  props: {
+    skill: String,
+    backgroundColor: String
+  }
 }
 </script>

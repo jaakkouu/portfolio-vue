@@ -8,10 +8,10 @@
 import Phase from './Phase'
 
 export default {
-    name: 'PhaseList',
-    props: ['phases'],
-    components: {
-        Phase
-    }
+  name: 'PhaseList',
+  props: ['phases'],
+  components: {
+    Phase
+  }
 }
 </script>

@@ -7,6 +7,6 @@
 <script>
 export default {
   name: 'Introduction',
-  props: ['description'],
+  props: ['description']
 }
 </script>

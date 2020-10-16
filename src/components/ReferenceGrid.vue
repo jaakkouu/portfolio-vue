@@ -8,15 +8,15 @@
 import ReferenceGridItem from './ReferenceGridItem'
 
 export default {
-    name: 'ReferenceGrid',
-    props: {
-        references: {
-            type: Array,
-            required: true
-        }
-    },
-    components: {
-        ReferenceGridItem
+  name: 'ReferenceGrid',
+  props: {
+    references: {
+      type: Array,
+      required: true
     }
+  },
+  components: {
+    ReferenceGridItem
+  }
 }
 </script>

@@ -9,10 +9,10 @@
 import Education from './Education'
 
 export default {
-    name: 'EducationList',
-    props: ['educations'],
-    components: {
-      Education
-    }
+  name: 'EducationList',
+  props: ['educations'],
+  components: {
+    Education
+  }
 }
 </script>

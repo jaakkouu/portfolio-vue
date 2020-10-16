@@ -9,15 +9,15 @@
 import Button from './Button'
 
 export default {
-    name: 'BackButton',
-    props: {
-        click: {
-            type: Function,
-            required: false
-        }
-    },
-    components: {
-        Button
+  name: 'BackButton',
+  props: {
+    click: {
+      type: Function,
+      required: false
     }
+  },
+  components: {
+    Button
+  }
 }
 </script>

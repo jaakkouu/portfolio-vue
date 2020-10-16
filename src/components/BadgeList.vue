@@ -8,13 +8,15 @@
 import Badge from './Badge'
 
 export default {
-    name: 'SkillList',
-    props: {
-      skills: Array,
+  name: 'SkillList',
+  props: {
+    skills: {
+      type: Array,
       required: true
-    },
-    components: {
-      Badge
     }
+  },
+  components: {
+    Badge
+  }
 }
 </script>

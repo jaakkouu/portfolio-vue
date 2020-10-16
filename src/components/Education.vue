@@ -9,12 +9,12 @@
 <script>
 import Timeline from './Timeline'
 export default {
-    name: 'Education',
-    props: {
-      education: Object
-    },
-    components: {
-      Timeline
-    }
+  name: 'Education',
+  props: {
+    education: Object
+  },
+  components: {
+    Timeline
+  }
 }
 </script>

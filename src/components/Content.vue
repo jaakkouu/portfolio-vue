@@ -6,12 +6,12 @@
 
 <script>
 export default {
-    name: 'Content',
-    props: {
-        classes: {
-            type: String,
-            required: false
-        }
+  name: 'Content',
+  props: {
+    classes: {
+      type: String,
+      required: false
     }
+  }
 }
 </script>

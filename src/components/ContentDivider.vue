@@ -4,6 +4,6 @@
 
 <script>
 export default {
-    name: 'ContentDivider'
+  name: 'ContentDivider'
 }
 </script>

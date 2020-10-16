@@ -6,10 +6,10 @@
 
 <script>
 export default {
-    name: 'ChangeLanguageButton',
-    props: {
-        buttonText: String,
-        buttonAction: Function
-    }
+  name: 'ChangeLanguageButton',
+  props: {
+    buttonText: String,
+    buttonAction: Function
+  }
 }
 </script>

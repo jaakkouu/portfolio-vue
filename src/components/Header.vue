@@ -14,16 +14,16 @@ import ProfileImage from './ProfileImage'
 import PersonalLinks from './PersonalLinks'
 
 export default {
-    name: 'Header',
-    props: { 
-        personal: Object,
-        personalLinks: Array
-    },
-    components: {
-        Name,
-        JobTitle,
-        ProfileImage,
-        PersonalLinks
-    }
+  name: 'Header',
+  props: {
+    personal: Object,
+    personalLinks: Array
+  },
+  components: {
+    Name,
+    JobTitle,
+    ProfileImage,
+    PersonalLinks
+  }
 }
 </script>

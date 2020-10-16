@@ -4,25 +4,25 @@
 
 <script>
 export default {
-    name: 'Title',
-    props: {
-      title: {
-        type: String,
-        required: true
-      },
-      centerized: {
-        type: Boolean,
-        required: false
-      }
+  name: 'Title',
+  props: {
+    title: {
+      type: String,
+      required: true
     },
-    computed: {
-      classes: function(){
-        let classArray = ["title"]
-        if(this.centerized) {
-          classArray.push("center")
-        }
-        return classArray.join(' ')
-      }
+    centerized: {
+      type: Boolean,
+      required: false
     }
+  },
+  computed: {
+    classes: function () {
+      const classArray = ['title']
+      if (this.centerized) {
+        classArray.push('center')
+      }
+      return classArray.join(' ')
+    }
+  }
 }
 </script>

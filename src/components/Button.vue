@@ -6,17 +6,17 @@
 
 <script>
 export default {
-    name: 'Button',
-    props: {
-        click: {
-            type: Function,
-            required: false
-        },
-        classes: {
-            type: String,
-            required: false,
-            default: "btn"
-        }
+  name: 'Button',
+  props: {
+    click: {
+      type: Function,
+      required: false
+    },
+    classes: {
+      type: String,
+      required: false,
+      default: 'btn'
     }
+  }
 }
 </script>

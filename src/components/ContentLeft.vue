@@ -6,6 +6,6 @@
 
 <script>
 export default {
-    name: 'ContentLeft'
+  name: 'ContentLeft'
 }
 </script>

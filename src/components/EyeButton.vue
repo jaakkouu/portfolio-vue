@@ -6,6 +6,6 @@
 
 <script>
 export default {
-    name: 'EyeButton'
+  name: 'EyeButton'
 }
 </script>

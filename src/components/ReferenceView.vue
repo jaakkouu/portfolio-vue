@@ -20,22 +20,22 @@ import BackButton from './BackButton'
 import Section from './Section'
 
 export default {
-    name: 'ReferenceView',
-    props: {
-        data: {
-            type: Object,
-            required: true
-        },
-        setView: {
-            type: Function,
-            required: true
-        }
+  name: 'ReferenceView',
+  props: {
+    data: {
+      type: Object,
+      required: true
     },
-    components: {
-        BackButton,
-        BadgeList,
-        Content,
-        Section
+    setView: {
+      type: Function,
+      required: true
     }
+  },
+  components: {
+    BackButton,
+    BadgeList,
+    Content,
+    Section
+  }
 }
 </script>

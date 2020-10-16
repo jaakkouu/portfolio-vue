@@ -4,10 +4,10 @@
 
 <script>
 export default {
-    name: 'SkillDot',
-    props: {
-        skill: String,
-        backgroundColor: String
-    }
+  name: 'SkillDot',
+  props: {
+    skill: String,
+    backgroundColor: String
+  }
 }
 </script>

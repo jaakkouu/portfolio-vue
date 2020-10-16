@@ -11,27 +11,25 @@
 import Content from './Content'
 import BackButton from './BackButton'
 import Section from './Section'
-import Title from './Title'
 import ReferenceGrid from './ReferenceGrid'
 
 export default {
-    name: 'ReferencesView',
-    props: {
-        data: {
-            type: Object,
-            required: true
-        },
-        setView: {
-            type: Function,
-            required: true
-        }
+  name: 'ReferencesView',
+  props: {
+    data: {
+      type: Object,
+      required: true
     },
-    components: {
-        BackButton,
-        ReferenceGrid,
-        Content,
-        Section,
-        Title
+    setView: {
+      type: Function,
+      required: true
     }
+  },
+  components: {
+    BackButton,
+    ReferenceGrid,
+    Content,
+    Section
+  }
 }
 </script>

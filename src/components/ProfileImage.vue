@@ -4,6 +4,6 @@
 
 <script>
 export default {
-    name: 'ProfileImage'
+  name: 'ProfileImage'
 }
 </script>

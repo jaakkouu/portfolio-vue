@@ -4,20 +4,20 @@
 
 <script>
 export default {
-    name: 'ReferenceSectionTitle',
-    props: {
-      title: {
-        type: String,
-        required: true
-      },
-      secondTitle: {
-        type: String,
-        required: true
-      },
-      showList: {
-        type: Function,
-        required: true
-      }
+  name: 'ReferenceSectionTitle',
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    secondTitle: {
+      type: String,
+      required: true
+    },
+    showList: {
+      type: Function,
+      required: true
     }
+  }
 }
 </script>

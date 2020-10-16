@@ -1,7 +1,7 @@
 <template>
-  <FontAwesomeIcon 
+  <FontAwesomeIcon
     v-on:click="redirectTo(personalLink.href)"
-    size="lg" 
+    size="lg"
     :icon="[personalLink.iconPrefix, personalLink.icon]"
   />
 </template>
@@ -13,8 +13,8 @@ export default {
     personalLink: Object
   },
   methods: {
-    redirectTo(href) {
-      window.location.href = href;
+    redirectTo (href) {
+      window.location.href = href
     }
   }
 }

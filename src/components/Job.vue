@@ -18,18 +18,18 @@ import PhaseList from './PhaseList'
 import Timeline from './Timeline'
 
 export default {
-    name: 'Job',
-    props: {
-      job: Object
-    },
-    components: {
-      PhaseList,
-      Timeline
-    },
-    methods: {
-      hasPhases() {
-        return this.job.hasOwnProperty('phases') && this.job.phases.length
-      }
+  name: 'Job',
+  props: {
+    job: Object
+  },
+  components: {
+    PhaseList,
+    Timeline
+  },
+  methods: {
+    hasPhases () {
+      return Object.prototype.hasOwnProperty.call(this.job, 'phases') && this.job.phases.length
     }
+  }
 }
 </script>

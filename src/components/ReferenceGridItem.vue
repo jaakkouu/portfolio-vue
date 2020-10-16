@@ -7,12 +7,12 @@
 
 <script>
 export default {
-    name: 'ReferenceGridItem',
-    props: {
-        reference: {
-            type: Object,
-            required: true
-        }
+  name: 'ReferenceGridItem',
+  props: {
+    reference: {
+      type: Object,
+      required: true
     }
+  }
 }
 </script>

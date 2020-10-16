@@ -8,12 +8,12 @@
 <script>
 import Timeline from './Timeline'
 export default {
-    name: 'Phase',
-    props: {
-      phase: Object
-    },
-    components: {
-      Timeline
-    }
+  name: 'Phase',
+  props: {
+    phase: Object
+  },
+  components: {
+    Timeline
+  }
 }
 </script>

@@ -8,15 +8,15 @@
 import Content from './Content'
 
 export default {
-    name: 'ContactView',
-    props: {
-        setView: {
-            type: Function,
-            required: true
-        }
-    },
-    components: {
-        Content
+  name: 'ContactView',
+  props: {
+    setView: {
+      type: Function,
+      required: true
     }
+  },
+  components: {
+    Content
+  }
 }
 </script>

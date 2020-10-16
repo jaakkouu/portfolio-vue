@@ -17,7 +17,7 @@
                 <BadgeList v-bind:skills=data.knowledges />
             </Section>
             <Section>
-                <ReferenceSectionTitle 
+                <ReferenceSectionTitle
                     v-bind:title=data.titles.references
                     v-bind:secondTitle=data.titles.listhere
                     v-bind:showList="() => setView('ReferencesView')"
@@ -42,29 +42,29 @@ import BadgeList from './BadgeList'
 import ReferenceList from './ReferenceList'
 
 export default {
-    name: 'FrontView',
-    props: {
-        data: {
-            type: Object,
-            required: true
-        },
-        setView: {
-            type: Function,
-            required: true
-        }
+  name: 'FrontView',
+  props: {
+    data: {
+      type: Object,
+      required: true
     },
-    components: {
-        Content,
-        Introduction,
-        JobList,
-        EducationList,
-        Section,
-        ContentLeft,
-        ContentDivider,
-        ContentRight,
-        BadgeList,
-        ReferenceSectionTitle,
-        ReferenceList
+    setView: {
+      type: Function,
+      required: true
     }
+  },
+  components: {
+    Content,
+    Introduction,
+    JobList,
+    EducationList,
+    Section,
+    ContentLeft,
+    ContentDivider,
+    ContentRight,
+    BadgeList,
+    ReferenceSectionTitle,
+    ReferenceList
+  }
 }
 </script>
