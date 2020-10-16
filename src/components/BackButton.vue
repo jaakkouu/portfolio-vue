@@ -1,5 +1,5 @@
 <template>
-    <Button v-bind:click="click">
+    <Button classes="btn back-button" v-bind:click="click">
         <FontAwesomeIcon size="xs" :icon="['fas', 'arrow-left']" />
         Palaa takaisin
     </Button>
