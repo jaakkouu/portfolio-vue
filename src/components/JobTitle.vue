@@ -1,10 +1,14 @@
 <template>
-    <p class="jobTitle">{{ jobTitle }}</p>
+    <p v-bind:data-testid="$dataTestIds.headerJobTitle()" class="jobTitle">{{ jobTitle }}</p>
 </template>
 
 <script>
 export default {
   name: 'JobTitle',
-  props: ['jobTitle']
+  props: {
+    jobTitle: {
+      type: String
+    }
+  }
 }
 </script>

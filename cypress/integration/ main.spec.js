@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import * as ui from '../../tests/data-test-ids' 
+
 context('Front page', () => {
   beforeEach(() => {
     cy.visit('/')
@@ -8,10 +10,9 @@ context('Front page', () => {
   describe('header information', () => {
     it('should display correct information', () => {
       cy.title().should('include', 'portfolio-vue')
-      const header = cy.get('#header')
-      header.get('.name').should('contain.text', 'Jaakko Uusitalo')
-      header.get('.jobTitle').should('be.visible')
-      header.get('.profileImage').should('be.visible')
+      cy.getExact(ui.headerName()).should('contain.text', 'Jaakko Uusitalo')
+      cy.getExact(ui.headerJobTitle()).should('be.visible')
+      cy.getExact(ui.headerProfileImage()).should('be.visible')
     })
   })
 

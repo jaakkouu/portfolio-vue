@@ -1,10 +1,14 @@
 <template>
-    <h1 class="name">{{ name }}</h1>
+    <h1 v-bind:data-testid="$dataTestIds.headerName()" class="name">{{ name }}</h1>
 </template>
 
 <script>
 export default {
   name: 'Name',
-  props: ['name']
+  props: {
+    name: {
+      type: String
+    }
+  }
 }
 </script>

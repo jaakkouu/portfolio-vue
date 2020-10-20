@@ -1,5 +1,5 @@
 <template>
-    <img class="profileImage" src="../assets/logo.jpg">
+    <img v-bind:data-testid="$dataTestIds.headerProfileImage()" class="profileImage" src="../assets/logo.jpg">
 </template>
 
 <script>
