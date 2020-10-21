@@ -39,6 +39,7 @@ context('Front page', () => {
       cy.getExact(ui.referencesGridContainer(), { timeout: 1000 }).getExact(ui.referenceGridItem()).eq(0).click()
       cy.getNested([ui.contentContainer(), ui.title()]).should('be.visible')
       cy.getNested([ui.contentContainer(), ui.referenceViewDescription()]).should('be.visible')
+      cy.getNested([ui.contentContainer(), ui.referenceViewLink()]).should('be.visible')
       cy.getNested([ui.contentContainer(), ui.badgeList()]).should('be.visible')
     })
     

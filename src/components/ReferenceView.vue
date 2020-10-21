@@ -5,7 +5,7 @@
             <p v-bind:data-testid="$dataTestIds.referenceViewDescription()" v-html=data.reference.description></p>
         </Section>
         <Section>
-            <a href=data.reference.referenceLink>Katso verkossa</a>
+            <a v-bind:data-testid="$dataTestIds.referenceViewLink()" v-bind:href=data.reference.referenceLink>Katso verkossa</a>
         </Section>
         <Section v-bind:title=data.titles.skillstocomplete v-bind:centerized=true>
             <BadgeList v-bind:skills=data.reference.skills />

@@ -11,5 +11,6 @@ export default {
     showMoreReferencesButton: () => 'show-more-references-button',
     title: () => 'title',
     referenceViewDescription: () => 'reference-view-description',
+    referenceViewLink: () => 'reference-view-link',
     badgeList: () => 'badge-list',
 }
