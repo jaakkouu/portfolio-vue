@@ -1,5 +1,5 @@
 <template>
-  <div class="skills">
+  <div v-bind:data-testid="$dataTestIds.badgeList()" class="skills">
     <Badge v-bind:style="{ backgroundColor: skillItem.backgroundColor}" v-for="(skillItem, index) in this.skills" v-bind:key=index v-bind:skill="skillItem.name" />
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
     skills: {
       type: Array,
       required: true
-    }
+    },
   },
   components: {
     Badge

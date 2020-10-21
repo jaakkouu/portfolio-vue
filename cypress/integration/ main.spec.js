@@ -18,28 +18,29 @@ context('Front page', () => {
 
   describe('references', () => {
     it('when clicked show more, should display all references', () => {
-      const referencesList = cy.get('.references')
-      const initialShownReferenceCount = referencesList.get('.reference').children().length
+      const referencesList = cy.getExact(ui.referencesListContainer())
+      const initialShownReferenceCount = referencesList.getExact(ui.referencesListItem()).children().length
       expect(initialShownReferenceCount === 5)
 
-      const showMoreButton = referencesList.get('.references .btn')
+      const showMoreButton = referencesList.getNested([ui.referencesListContainer(), ui.showMoreReferencesButton()])
       showMoreButton.click()
-      const currentlyShownReferenceCountAfterClick = referencesList.get('.reference').children().length
+      const currentlyShownReferenceCountAfterClick = referencesList.getExact(ui.referencesListItem()).children().length
 
       expect(currentlyShownReferenceCountAfterClick > initialShownReferenceCount)
     })
 
     it('when clicked open references, should display references grid', () => {
-      cy.get('#openReferences').click()
-      cy.get('#referenceGrid', { timeout: 1000 }).should('be.visible')
+      cy.getExact(ui.openReferencesButton()).click()
+      cy.getExact(ui.referencesGridContainer(), { timeout: 1000 }).should('be.visible')
     })
-
+    
     it('when clicked reference, should display reference', () => {
-      cy.get('#openReferences').click()
-      cy.get('#referenceGrid', { timeout: 1000 }).find('.referenceGridItem').eq(0).click()
-      cy.get('#content h2').should('be.visible')
-      cy.get('#content p').should('be.visible')
-      cy.get('#content .skills').should('be.visible')
+      cy.getExact(ui.openReferencesButton()).click()
+      cy.getExact(ui.referencesGridContainer(), { timeout: 1000 }).getExact(ui.referenceGridItem()).eq(0).click()
+      cy.getNested([ui.contentContainer(), ui.title()]).should('be.visible')
+      cy.getNested([ui.contentContainer(), ui.referenceViewDescription()]).should('be.visible')
+      cy.getNested([ui.contentContainer(), ui.badgeList()]).should('be.visible')
     })
+    
   })
 })

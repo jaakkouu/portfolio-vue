@@ -1,5 +1,5 @@
 <template>
-  <h2 v-bind:class="classes">{{ title }}</h2>
+  <h2 v-bind:data-testid="$dataTestIds.title()" v-bind:class="classes">{{ title }}</h2>
 </template>
 
 <script>

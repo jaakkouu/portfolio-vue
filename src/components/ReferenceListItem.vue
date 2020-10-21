@@ -1,5 +1,5 @@
 <template>
-  <div class="reference">
+  <div v-bind:data-testid="$dataTestIds.referencesListItem()" class="reference">
     <h3 style="position:relative">
       <EyeButton v-if="hasImages()" />
       <span>{{ reference.name }}
@@ -15,7 +15,6 @@
 </template>
 
 <script>
-
 import SkillList from './SkillList'
 import EyeButton from './EyeButton'
 

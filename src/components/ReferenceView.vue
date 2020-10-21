@@ -2,7 +2,7 @@
     <Content>
         <BackButton v-bind:click="() => setView('ReferencesView')" />
         <Section v-bind:title=data.reference.name v-bind:centerized=true>
-            <p v-html=data.reference.description></p>
+            <p v-bind:data-testid="$dataTestIds.referenceViewDescription()" v-html=data.reference.description></p>
         </Section>
         <Section>
             <a href=data.reference.referenceLink>Katso verkossa</a>
