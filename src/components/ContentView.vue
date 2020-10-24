@@ -1,6 +1,5 @@
 <template>
-    <component  v-bind:is=view v-bind:data=data v-bind:setView=setView
-    />
+    <component v-bind:is=view v-bind:data=data v-bind:setView=setView />
 </template>
 
 <script>
@@ -43,14 +42,17 @@ export default {
       this.setData(reference)
       this.setView('ReferenceView')
     },
+    referencesWithCallback (reference) {
+      return reference.map(reference => ({
+        ...reference,
+        setReferenceView: () => this.setReferenceView(reference)
+      }))
+    },
     filterDataToView () {
       switch (this.view) {
         case 'ReferencesView': return {
           titles: this.computedData.titles,
-          references: this.computedData.references.map(reference => ({
-            ...reference,
-            setReferenceView: () => this.setReferenceView(reference)
-          }))
+          references: this.referencesWithCallback(this.computedData.references)
         }
         case 'ReferenceView': return {
           reference: this.data,
@@ -62,7 +64,7 @@ export default {
           jobs: this.computedData.jobs,
           education: this.computedData.education,
           knowledges: this.computedData.knowledges,
-          references: this.computedData.references
+          references: this.referencesWithCallback(this.computedData.references)
         }
       }
     }

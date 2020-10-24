@@ -3,6 +3,7 @@ export default {
     headerName: () => 'header-name',
     headerProfileImage: () => 'header-profile-image',
     openReferencesButton: () => 'open-references-button',
+    openReferenceEyeButton: () => 'open-reference-eye-button',
     referencesGridContainer: () => 'references-grid-container',
     referenceGridItem: () => 'reference-grid-item',
     referencesListContainer: () => 'references-list-container',

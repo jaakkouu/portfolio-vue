@@ -1,7 +1,7 @@
 <template>
   <div v-bind:data-testid="$dataTestIds.referencesListItem()" class="reference">
     <h3 style="position:relative">
-      <EyeButton v-if="hasImages()" />
+      <EyeButton v-if="hasImages()" v-bind:click="() => reference.setReferenceView(reference)" />
       <span>{{ reference.name }}
         {{ this.hasAdditionalInfo()
           ? ' | ' + reference.additionalInfo

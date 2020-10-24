@@ -42,6 +42,14 @@ context('Front page', () => {
       cy.getNested([ui.contentContainer(), ui.referenceViewLink()]).should('be.visible')
       cy.getNested([ui.contentContainer(), ui.badgeList()]).should('be.visible')
     })
+
+    it('when clicked reference eye button, should display reference', () => {
+      cy.getNested([ui.referencesListContainer(), ui.openReferenceEyeButton()]).eq(0).click()
+      cy.getNested([ui.contentContainer(), ui.title()]).should('be.visible')
+      cy.getNested([ui.contentContainer(), ui.referenceViewDescription()]).should('be.visible')
+      cy.getNested([ui.contentContainer(), ui.referenceViewLink()]).should('be.visible')
+      cy.getNested([ui.contentContainer(), ui.badgeList()]).should('be.visible')
+    })
     
   })
 })
