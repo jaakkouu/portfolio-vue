@@ -2,12 +2,11 @@
   <div :data-testid="$dataTestIds.referencesListItem()" class="reference">
     <h3 style="position:relative">
       <EyeButton v-if="hasImages()" :click="() => reference.setReferenceView(reference)" />
-      <span>{{ reference.name }}
-        {{ this.hasAdditionalInfo()
-          ? ' | ' + reference.additionalInfo
-          : ''
-        }}
+      <span v-if="this.hasAdditionalInfo()">
+        {{ reference.name + ' | ' }} 
+        <span class='purple'>{{ reference.additionalInfo }}</span>
       </span>
+      <span v-else>{{ reference.name }}</span>
     </h3>
     <p v-html="reference['short-description']" />
     <SkillList :skills="reference.skills" />
