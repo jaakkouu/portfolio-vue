@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="section">
         <Title v-if=title :title=title :centerized=centerized />
         <slot></slot>
     </div>

@@ -16,8 +16,10 @@ img {
     width: 100%;
 }
 p {
-    line-height: $text-line-height;
+    margin-bottom: $paragraph-margin-bottom;
 }
+.mb-0 { margin-bottom: 0 }
+.pb-0 { padding-bottom: 0 }
 h1, h2, h3, h4 {
     font-family: $font-family-heading;
     font-weight: $font-heading-weight;
@@ -123,6 +125,9 @@ a, button {
 }
 #content {
     grid-area: content;
+    >.section {
+       margin-bottom: 30px
+    }
 }
 .front-view {
     display: grid;

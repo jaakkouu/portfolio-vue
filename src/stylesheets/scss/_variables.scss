@@ -1,9 +1,12 @@
-$font-base-size: 0.833rem;
+$font-size-in-pixels: 14px;
+$font-base-size: calculateRem($font-size-in-pixels);
 $font-badge-size: calculateRem(10px);
 $font-family-heading: "Lato" !default;
 $font-family-body: "Rubik" !default;
 $font-heading-weight: 700 !default;
 $font-body-weight: 300 !default;
+
+$paragraph-margin-bottom: 16px !default;
 
 $backgroundColor: #f9f9f9 !default;
 $color: #ba88ce !default;
@@ -12,7 +15,6 @@ $main-padding-y: 25px !default;
 $main-padding-x: 50px !default;
 $main-padding: $main-padding-y $main-padding-x !default;
 $heading-margin-bottom: 24px !default;
-$text-line-height: 18px !default;
 $section-item-margin-bottom: $heading-margin-bottom * 1.1 !default;
 
 $breakpoint-tablet: 768px;

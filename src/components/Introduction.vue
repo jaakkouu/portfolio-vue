@@ -1,6 +1,6 @@
 <template>
   <div class="introduction">
-    <p>{{ this.description }}</p>
+    <p class="mb-0">{{ this.description }}</p>
   </div>
 </template>
 
