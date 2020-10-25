@@ -1,13 +1,18 @@
 <template>
-    <span :style="{backgroundColor: backgroundColor}" :title=skill class="skill"></span>
+    <span :style="{backgroundColor: backgroundColor}" :title="name" class="skill"></span>
 </template>
 
 <script>
 export default {
   name: 'SkillDot',
   props: {
-    skill: String,
-    backgroundColor: String
+    name: {
+      type: String,
+      required: true
+    },
+    backgroundColor: {
+      type: String
+    }
   }
 }
 </script>
