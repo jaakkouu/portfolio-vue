@@ -1,5 +1,5 @@
 <template>
-    <div v-bind:data-testid="$dataTestIds.contentContainer()" id="content" v-bind:class=classes>
+    <div :data-testid="$dataTestIds.contentContainer()" id="content" :class=classes>
         <slot></slot>
     </div>
 </template>

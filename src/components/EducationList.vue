@@ -1,6 +1,6 @@
 <template>
   <div class="educations">
-    <Education v-for="(education, index) in this.educations" v-bind:key=index v-bind:education="education" />
+    <Education v-for="(education, index) in this.educations" :key=index :education="education" />
   </div>
 </template>
 

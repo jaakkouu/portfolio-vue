@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Title v-if=title v-bind:title=title v-bind:centerized=centerized />
+        <Title v-if=title :title=title :centerized=centerized />
         <slot></slot>
     </div>
 </template>

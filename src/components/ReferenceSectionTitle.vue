@@ -1,5 +1,5 @@
 <template>
-  <h2 class="title">{{ title }} - <span id="openReferences" v-bind:data-testid="$dataTestIds.openReferencesButton()" class="btn purple" v-on:click="showList">{{ secondTitle }}</span></h2>
+  <h2 class="title">{{ title }} - <span id="openReferences" :data-testid="$dataTestIds.openReferencesButton()" class="btn purple" v-on:click="showList">{{ secondTitle }}</span></h2>
 </template>
 
 <script>

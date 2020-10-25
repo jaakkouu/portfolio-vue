@@ -1,11 +1,11 @@
 <template>
-  <div v-bind:data-testid="$dataTestIds.referencesListContainer()" class="references">
+  <div :data-testid="$dataTestIds.referencesListContainer()" class="references">
     <ReferenceListItem
       v-for="(reference,index) in limitReferences(references)"
-      v-bind:key=index
-      v-bind:reference="reference"
+      :key=index
+      :reference="reference"
     />
-    <Button v-bind:testid="$dataTestIds.showMoreReferencesButton()" v-bind:click="toggleLimit">
+    <Button :testid="$dataTestIds.showMoreReferencesButton()" :click="toggleLimit">
         <FontAwesomeIcon size="xs" :icon="['fas', limit ? 'plus' : 'minus']" />
         {{ limit ? 'Näytä kaikki' : 'Näytä vähemmän' }}
     </Button>

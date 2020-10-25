@@ -1,28 +1,28 @@
 <template>
     <Content classes="front-view">
         <ContentLeft>
-            <Section v-bind:title=data.titles.introduction>
-                <Introduction v-bind:description=data.personal.description />
+            <Section :title=data.titles.introduction>
+                <Introduction :description=data.personal.description />
              </Section>
-            <Section v-bind:title=data.titles.experience>
-                <JobList v-bind:jobs=data.jobs />
+            <Section :title=data.titles.experience>
+                <JobList :jobs=data.jobs />
             </Section>
-            <Section v-bind:title=data.titles.education>
-                <EducationList v-bind:educations=data.education />
+            <Section :title=data.titles.education>
+                <EducationList :educations=data.education />
             </Section>
         </ContentLeft>
         <ContentDivider />
         <ContentRight>
-            <Section v-bind:title=data.titles.knowledge>
-                <BadgeList v-bind:skills=data.knowledges />
+            <Section :title=data.titles.knowledge>
+                <BadgeList :skills=data.knowledges />
             </Section>
             <Section>
                 <ReferenceSectionTitle
-                    v-bind:title=data.titles.references
-                    v-bind:secondTitle=data.titles.listhere
-                    v-bind:showList="() => setView('ReferencesView')"
+                    :title=data.titles.references
+                    :secondTitle=data.titles.listhere
+                    :showList="() => setView('ReferencesView')"
                 />
-                <ReferenceList v-bind:references=data.references />
+                <ReferenceList :references=data.references />
             </Section>
         </ContentRight>
     </Content>

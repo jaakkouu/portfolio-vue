@@ -1,5 +1,5 @@
 <template>
-    <span v-bind:style="{backgroundColor: backgroundColor}" v-bind:title=skill class="skill"></span>
+    <span :style="{backgroundColor: backgroundColor}" :title=skill class="skill"></span>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <h1 v-bind:data-testid="$dataTestIds.headerName()" class="name">{{ name }}</h1>
+    <h1 :data-testid="$dataTestIds.headerName()" class="name">{{ name }}</h1>
 </template>
 
 <script>

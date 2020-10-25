@@ -1,5 +1,5 @@
 <template>
-    <button v-bind:data-testid="testid" v-bind:class="classes" v-on:click="click">
+    <button :data-testid="testid" :class="classes" v-on:click="click">
         <slot></slot>
     </button>
 </template>

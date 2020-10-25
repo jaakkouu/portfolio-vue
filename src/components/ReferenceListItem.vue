@@ -1,7 +1,7 @@
 <template>
-  <div v-bind:data-testid="$dataTestIds.referencesListItem()" class="reference">
+  <div :data-testid="$dataTestIds.referencesListItem()" class="reference">
     <h3 style="position:relative">
-      <EyeButton v-if="hasImages()" v-bind:click="() => reference.setReferenceView(reference)" />
+      <EyeButton v-if="hasImages()" :click="() => reference.setReferenceView(reference)" />
       <span>{{ reference.name }}
         {{ this.hasAdditionalInfo()
           ? ' | ' + reference.additionalInfo
@@ -10,7 +10,7 @@
       </span>
     </h3>
     <p v-html="reference['short-description']" />
-    <SkillList v-bind:skills="reference.skills" />
+    <SkillList :skills="reference.skills" />
   </div>
 </template>
 

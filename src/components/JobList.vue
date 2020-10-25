@@ -1,6 +1,6 @@
 <template>
   <div class="jobs">
-    <Job v-for="(job,index) in this.jobs" v-bind:key=index v-bind:job="job" />
+    <Job v-for="(job,index) in this.jobs" :key=index :job="job" />
   </div>
 </template>
 

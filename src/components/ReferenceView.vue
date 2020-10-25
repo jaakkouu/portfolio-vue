@@ -1,14 +1,14 @@
 <template>
     <Content>
-        <BackButton v-bind:click="() => setView('ReferencesView')" />
-        <Section v-bind:title=data.reference.name v-bind:centerized=true>
-            <p v-bind:data-testid="$dataTestIds.referenceViewDescription()" v-html=data.reference.description></p>
+        <BackButton :click="() => setView('ReferencesView')" />
+        <Section :title=data.reference.name :centerized=true>
+            <p :data-testid="$dataTestIds.referenceViewDescription()" v-html=data.reference.description></p>
         </Section>
         <Section>
-            <a v-bind:data-testid="$dataTestIds.referenceViewLink()" v-bind:href=data.reference.referenceLink>Katso verkossa</a>
+            <a :data-testid="$dataTestIds.referenceViewLink()" :href=data.reference.referenceLink>Katso verkossa</a>
         </Section>
-        <Section v-bind:title=data.titles.skillstocomplete v-bind:centerized=true>
-            <BadgeList v-bind:skills=data.reference.skills />
+        <Section :title=data.titles.skillstocomplete :centerized=true>
+            <BadgeList :skills=data.reference.skills />
         </Section>
     </Content>
 </template>

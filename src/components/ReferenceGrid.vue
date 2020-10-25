@@ -1,6 +1,6 @@
 <template>
-  <div v-bind:data-testid="$dataTestIds.referencesGridContainer()" id="referenceGrid">
-    <ReferenceGridItem v-for="(reference,index) in references" v-bind:key=index v-bind:reference=reference />
+  <div :data-testid="$dataTestIds.referencesGridContainer()" id="referenceGrid">
+    <ReferenceGridItem v-for="(reference,index) in references" :key=index :reference=reference />
   </div>
 </template>
 

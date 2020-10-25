@@ -1,8 +1,8 @@
 <template>
     <Content>
-        <BackButton v-bind:click="() => setView('FrontView')" />
-        <Section v-bind:title=data.titles.references v-bind:centerized=true>
-            <ReferenceGrid v-bind:references=data.references />
+        <BackButton :click="() => setView('FrontView')" />
+        <Section :title=data.titles.references :centerized=true>
+            <ReferenceGrid :references=data.references />
         </Section>
     </Content>
 </template>

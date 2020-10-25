@@ -1,5 +1,5 @@
 <template>
-    <span v-bind:style="{backgroundColor: backgroundColor}" class="badge">{{ skill }}</span>
+    <span :style="{backgroundColor: backgroundColor}" class="badge">{{ skill }}</span>
 </template>
 
 <script>

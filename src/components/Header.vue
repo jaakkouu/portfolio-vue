@@ -1,9 +1,9 @@
 <template>
     <div id="header">
-        <Name v-bind:name="this.personal.name"/>
-        <JobTitle v-bind:jobTitle="this.personal.jobTitle"/>
+        <Name :name="this.personal.name"/>
+        <JobTitle :jobTitle="this.personal.jobTitle"/>
         <ProfileImage />
-        <PersonalLinks v-bind:personalLinks=personalLinks />
+        <PersonalLinks :personalLinks=personalLinks />
     </div>
 </template>
 

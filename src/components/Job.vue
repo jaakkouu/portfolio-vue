@@ -3,7 +3,7 @@
     <h3>
       <a :href="job.workPlaceLink">{{ job.workPlace }}</a>
     </h3>
-    <PhaseList v-bind:phases="job.phases" />
+    <PhaseList :phases="job.phases" />
   </div>
   <div class="job" v-else>
     <h3>

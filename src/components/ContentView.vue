@@ -1,5 +1,5 @@
 <template>
-    <component v-bind:is=view v-bind:data=data v-bind:setView=setView />
+    <component :is=view :data=data :setView=setView />
 </template>
 
 <script>
