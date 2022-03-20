@@ -1,49 +1,39 @@
-import firebase from 'firebase'
+import { initializeApp } from "firebase/app"
+import { getDatabase, ref, child, get } from "firebase/database"
 
 class FirebaseConnection {
-  constructor () {
-    this.appImplementation = null
-    this.db = null
-  }
+
+  projectId = "portfolio-e9405";
 
   initializeConnection = () => {
     try {
       const firebaseConfig = this.getFirebaseConfig()
-      this.appImplementation = firebase.initializeApp(firebaseConfig)
+      initializeApp(firebaseConfig)
     } catch (error) {
       console.error('Error while initializing connection to firebase: ', error)
     }
   }
 
-  initializeDatabase = () => {
+  getSnapshot = async () => {
     try {
-      this.db = this.appImplementation.database()
-    } catch (error) {
-      console.error('Error while initializing database')
-    }
-  }
-
-  getFirebaseConfig = () => {
-    return {
-      apiKey: 'AIzaSyARBW56w1O1jl_wx07C1z2Ka9gFH_VBs2I',
-      authDomain: 'portfolio-e9405.firebaseapp.com',
-      databaseURL: 'https://portfolio-e9405.firebaseio.com/',
-      projectId: 'portfolio-e9405',
-      storageBucket: 'portfolio-e9405.appspot.com',
-      messagingSenderId: '652131799329',
-      appId: '1:652131799329:web:fb522a78d0ef7aaf'
-    }
-  }
-
-  getSnapshot = () => {
-    try {
-      return this.db.ref('/').once('value').then(function (snapshot) {
-        return snapshot.val()
-      })
+      const dbRef = ref(getDatabase())
+      const snapshot = await get(child(dbRef, '/'));
+      return snapshot.val();
     } catch (error) {
       console.error('Error while getting data from firebase: ', error)
     }
   }
+
+  getFirebaseConfig = () => ({
+    projectId: this.projectId,
+    apiKey: "AIzaSyARBW56w1O1jl_wx07C1z2Ka9gFH_VBs2I",
+    authDomain: `${this.projectId}.firebaseapp.com`,
+    databaseURL:`https://${this.projectId}.firebaseio.com`,
+    storageBucket: `https://${this.projectId}.appspot.com`,
+    messagingSenderId: "652131799329",
+    appId: "1:652131799329:web:fb522a78d0ef7aaf" 
+  })
+
 }
 
 export default FirebaseConnection

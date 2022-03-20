@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Main from './components/Main'
+import Main  from './components/Main'
 import Loader from './components/Loader'
 import Header from './components/Header'
 import ContentView from './components/ContentView'
@@ -44,7 +44,6 @@ export default {
     async fetchData () {
       const connection = new FirebaseConnection()
       connection.initializeConnection()
-      connection.initializeDatabase()
       return await connection.getSnapshot()
     },
     async setData (dataPromise) {
