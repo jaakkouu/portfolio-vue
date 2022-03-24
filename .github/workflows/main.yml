@@ -28,4 +28,4 @@ jobs:
         server: ftp://ftp.jaakkouusitalo.fi/vue/
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: vue
+        local-dir: vue/
