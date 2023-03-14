@@ -19,7 +19,7 @@
     "firebase": "^9.6.8",
     "randomcolor": "^0.6.2",
     "vue": "^3.2.31",
-    "webpack": "^5.70.0"
+    "webpack": "^5.76.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.17.0",
